@@ -325,6 +325,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize language on load
   initializeLanguage();
   
+  // Update stats from config.js (if available)
+  updateStats();
+  
   // Header scroll effect
   function handleScroll() {
     if (window.scrollY > 50) {
@@ -447,6 +450,61 @@ document.addEventListener('DOMContentLoaded', function() {
         zh: '输入您的邮箱'
       };
       wishlistEmail.placeholder = placeholders[lang];
+    }
+  }
+  
+  // Update stats from config.js
+  function updateStats() {
+    // Check if gameStats exists (from config.js)
+    if (typeof gameStats === 'undefined') {
+      console.warn('gameStats not found. Please create config.js file.');
+      return;
+    }
+    
+    try {
+      // Hero stats
+      const heroStats = document.querySelectorAll('.hero-stats .stat-number');
+      if (heroStats[0]) {
+        heroStats[0].textContent = gameStats.followers > 0 ? gameStats.followers + '+' : '0';
+      }
+      if (heroStats[1]) {
+        heroStats[1].textContent = gameStats.backers;
+      }
+      if (heroStats[2]) {
+        heroStats[2].textContent = gameStats.fundedPercent + '%';
+      }
+      
+      // Patreon stats
+      const patreonStats = document.querySelectorAll('.patreon-stat .stat-value');
+      if (patreonStats[0]) {
+        patreonStats[0].textContent = '$' + gameStats.raised.toLocaleString();
+      }
+      if (patreonStats[1]) {
+        patreonStats[1].textContent = '$' + gameStats.goal.toLocaleString();
+      }
+      if (patreonStats[2]) {
+        patreonStats[2].textContent = gameStats.backers;
+      }
+      
+      // Progress bar
+      const progressFill = document.querySelector('.progress-fill');
+      const progressText = document.querySelector('.progress-text');
+      if (progressFill && progressText) {
+        progressFill.style.width = gameStats.fundedPercent + '%';
+        progressFill.setAttribute('data-progress', gameStats.fundedPercent);
+        progressText.textContent = gameStats.fundedPercent + '%';
+      }
+      
+      // Release dates (if available in gameStats)
+      if (gameStats.releaseDate && gameStats.alphaDate) {
+        const releaseValues = document.querySelectorAll('.release-value');
+        if (releaseValues[0]) releaseValues[0].textContent = gameStats.releaseDate;
+        if (releaseValues[1]) releaseValues[1].textContent = gameStats.alphaDate;
+      }
+      
+      console.log('✅ Stats updated successfully!');
+    } catch (error) {
+      console.error('Error updating stats:', error);
     }
   }
   
