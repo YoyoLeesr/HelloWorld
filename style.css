@@ -54,7 +54,6 @@ body[lang="zh"] .logo {
   padding: 0 20px;
 }
 
-/* Background Animation */
 .background-animation {
   position: fixed;
   top: 0;
@@ -73,7 +72,6 @@ body[lang="zh"] .logo {
   50% { opacity: 1; }
 }
 
-/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -159,7 +157,6 @@ body[lang="zh"] .logo {
   width: 100%;
 }
 
-/* Language Switcher */
 .header-actions {
   display: flex;
   align-items: center;
@@ -218,7 +215,6 @@ body[lang="zh"] .logo {
   border-radius: 2px;
 }
 
-/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -447,7 +443,6 @@ body[lang="zh"] .logo {
   letter-spacing: 2px;
 }
 
-/* Features Section */
 .features {
   padding: 100px 20px;
   background: var(--dark);
@@ -548,7 +543,6 @@ body[lang="zh"] .feature-card h3 {
   line-height: 1.8;
 }
 
-/* Gameplay Section */
 .gameplay {
   padding: 100px 20px;
   background: var(--darker);
@@ -673,7 +667,6 @@ body[lang="zh"] .gameplay-info h3 {
   line-height: 1.7;
 }
 
-/* Patreon Section */
 .patreon {
   padding: 120px 20px;
   background: var(--darker);
@@ -801,7 +794,6 @@ body[lang="zh"] .patreon-title {
   letter-spacing: 1px;
 }
 
-/* Progress Bar */
 .progress-bar-container {
   margin-bottom: 60px;
 }
@@ -843,7 +835,6 @@ body[lang="zh"] .patreon-title {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Tier Cards */
 .patreon-tiers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -983,7 +974,6 @@ body[lang="zh"] .tier-name {
   box-shadow: 0 10px 30px rgba(255, 0, 255, 0.5);
 }
 
-/* Patreon CTA */
 .patreon-cta {
   text-align: center;
   padding: 40px;
@@ -1033,7 +1023,6 @@ body[lang="zh"] .tier-name {
   50% { transform: scale(1.2) rotate(180deg); }
 }
 
-/* Recent Updates */
 .patreon-updates h3 {
   font-family: 'Orbitron', sans-serif;
   font-size: 28px;
@@ -1088,10 +1077,10 @@ body[lang="zh"] .patreon-updates h3 {
   line-height: 1.6;
 }
 
-/* Download Section */
 .download {
   padding: 100px 20px;
   background: var(--dark);
+  position: relative;
 }
 
 .download::before {
@@ -1257,7 +1246,6 @@ body[lang="zh"] .download-card h2 {
   color: var(--dark);
 }
 
-/* Wishlist Section */
 .wishlist-section {
   margin: 50px 0;
   padding: 40px;
@@ -1374,7 +1362,6 @@ body[lang="zh"] .system-requirements h4 {
   font-weight: 700;
 }
 
-/* Footer */
 .footer {
   background: var(--darker);
   padding: 60px 20px 30px;
@@ -1428,7 +1415,6 @@ body[lang="zh"] .footer-social h4 {
   padding-left: 5px;
 }
 
-/* Responsive Design */
 @media (max-width: 968px) {
   .nav {
     position: fixed;
