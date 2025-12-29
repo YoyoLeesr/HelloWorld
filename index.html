@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World! - Epic 3D RPG FPS Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="background-animation"></div>
+  
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-bracket">&lt;</span>
+        Hello World!
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#gameplay" data-i18n="nav.gameplay">Gameplay</a>
+        <a href="#support" data-i18n="nav.support">Support</a>
+        <a href="#download" data-i18n="nav.download">Download</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="glitch-wrapper">
+        <h1 class="hero-title">HELLO WORLD!</h1>
+      </div>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Enter a new dimension of combat</p>
+      <p class="hero-description" data-i18n="hero.description">
+        Experience the ultimate fusion of RPG depth and FPS intensity in a stunning 3D world
+      </p>
+      <div class="hero-buttons">
+        <a href="#support" class="btn btn-primary">
+          <span data-i18n="hero.supportNow">Support Now</span>
+        </a>
+        <a href="#gameplay" class="btn btn-secondary">
+          <span data-i18n="hero.watchTrailer">Watch Trailer</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label" data-i18n="hero.followers">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">127</div>
+          <div class="stat-label" data-i18n="hero.backers">Backers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24%</div>
+          <div class="stat-label" data-i18n="hero.funded">Funded</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="game-mockup">
+        <div class="mockup-screen">
+          <div class="placeholder-image">🎮</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      <p data-i18n="hero.scrollToExplore">Scroll to explore</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-accent">//</span> 
+        <span data-i18n="features.title">Game Features</span>
+      </h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3 data-i18n="features.openWorld.title">Massive Open World</h3>
+          <p data-i18n="features.openWorld.desc">Explore a vast 3D universe filled with secrets, dungeons, and epic landscapes</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3 data-i18n="features.combat.title">Dynamic Combat</h3>
+          <p data-i18n="features.combat.desc">Master both ranged and melee combat with fluid FPS mechanics and RPG abilities</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎭</div>
+          <h3 data-i18n="features.customization.title">Character Customization</h3>
+          <p data-i18n="features.customization.desc">Create your unique hero with deep skill trees and endless equipment options</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3 data-i18n="features.multiplayer.title">Multiplayer Co-op</h3>
+          <p data-i18n="features.multiplayer.desc">Team up with friends in epic raids and PvP battles</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3 data-i18n="features.story.title">Rich Storyline</h3>
+          <p data-i18n="features.story.desc">Uncover the mysteries of the digital realm in an immersive narrative</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3 data-i18n="features.graphics.title">Stunning Graphics</h3>
+          <p data-i18n="features.graphics.desc">Experience breathtaking visuals powered by cutting-edge technology</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gameplay Section -->
+  <section id="gameplay" class="gameplay">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-accent">//</span> 
+        <span data-i18n="gameplay.title">Gameplay Preview</span>
+      </h2>
+      <div class="gameplay-content">
+        <div class="video-container">
+          <div class="video-placeholder">
+            <div class="play-button">▶</div>
+            <p data-i18n="gameplay.clickToWatch">Click to watch trailer</p>
+          </div>
+        </div>
+        <div class="gameplay-info">
+          <h3 data-i18n="gameplay.subtitle">Immersive Combat Experience</h3>
+          <ul class="gameplay-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong data-i18n="gameplay.ai.title">Advanced AI Enemies</strong>
+                <p data-i18n="gameplay.ai.desc">Face intelligent foes that adapt to your playstyle</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong data-i18n="gameplay.strategy.title">Real-time Strategy</strong>
+                <p data-i18n="gameplay.strategy.desc">Plan your attacks and use the environment to your advantage</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong data-i18n="gameplay.crafting.title">Weapon Crafting</strong>
+                <p data-i18n="gameplay.crafting.desc">Forge legendary weapons from materials found in your journey</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong data-i18n="gameplay.bosses.title">Boss Battles</strong>
+                <p data-i18n="gameplay.bosses.desc">Challenge epic bosses that require skill and strategy to defeat</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patreon Section -->
+  <section id="support" class="patreon">
+    <div class="container">
+      <div class="patreon-container">
+        <div class="patreon-badge">
+          <span class="badge-icon">🚀</span>
+          <span data-i18n="patreon.badge">Pre-Development</span>
+        </div>
+        
+        <h2 class="patreon-title">
+          <span data-i18n="patreon.title">Support the Development</span>
+        </h2>
+        
+        <p class="patreon-subtitle" data-i18n="patreon.subtitle">
+          Hello World! is currently in pre-development. Your support will help bring this epic adventure to life!
+        </p>
+
+        <div class="patreon-stats">
+          <div class="patreon-stat">
+            <div class="stat-icon">💰</div>
+            <div class="stat-content">
+              <div class="stat-value">$2,450</div>
+              <div class="stat-label" data-i18n="patreon.raised">Raised</div>
+            </div>
+          </div>
+          <div class="patreon-stat">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-content">
+              <div class="stat-value">$10,000</div>
+              <div class="stat-label" data-i18n="patreon.goal">Goal</div>
+            </div>
+          </div>
+          <div class="patreon-stat">
+            <div class="stat-icon">👥</div>
+            <div class="stat-content">
+              <div class="stat-value">127</div>
+              <div class="stat-label" data-i18n="patreon.backers">Backers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress-fill" data-progress="24.5">
+              <span class="progress-text">24.5%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="patreon-tiers">
+          <div class="tier-card tier-bronze">
+            <div class="tier-header">
+              <div class="tier-icon">🥉</div>
+              <h3 class="tier-name" data-i18n="patreon.tiers.supporter.name">Supporter</h3>
+              <div class="tier-price">$5<span data-i18n="patreon.perMonth">/month</span></div>
+            </div>
+            <ul class="tier-benefits">
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.supporter.benefit1">Access to development blog</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.supporter.benefit2">Discord supporter role</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.supporter.benefit3">Your name in credits</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.supporter.benefit4">Exclusive wallpapers</span></li>
+            </ul>
+            <a href="#" class="tier-btn" data-i18n="patreon.selectTier">Select Tier</a>
+          </div>
+
+          <div class="tier-card tier-silver featured">
+            <div class="featured-badge" data-i18n="patreon.mostPopular">Most Popular</div>
+            <div class="tier-header">
+              <div class="tier-icon">🥈</div>
+              <h3 class="tier-name" data-i18n="patreon.tiers.champion.name">Champion</h3>
+              <div class="tier-price">$15<span data-i18n="patreon.perMonth">/month</span></div>
+            </div>
+            <ul class="tier-benefits">
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.champion.benefit1">All Supporter benefits</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.champion.benefit2">Early alpha access</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.champion.benefit3">Exclusive in-game items</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.champion.benefit4">Monthly dev Q&A</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.champion.benefit5">Vote on game features</span></li>
+            </ul>
+            <a href="#" class="tier-btn" data-i18n="patreon.selectTier">Select Tier</a>
+          </div>
+
+          <div class="tier-card tier-gold">
+            <div class="tier-header">
+              <div class="tier-icon">🥇</div>
+              <h3 class="tier-name" data-i18n="patreon.tiers.legend.name">Legend</h3>
+              <div class="tier-price">$50<span data-i18n="patreon.perMonth">/month</span></div>
+            </div>
+            <ul class="tier-benefits">
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.legend.benefit1">All Champion benefits</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.legend.benefit2">Design your own NPC</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.legend.benefit3">Private Discord channel</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.legend.benefit4">Lifetime game license</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.legend.benefit5">Special edition merchandise</span></li>
+              <li><span class="benefit-check">✓</span><span data-i18n="patreon.tiers.legend.benefit6">Video call with dev team</span></li>
+            </ul>
+            <a href="#" class="tier-btn" data-i18n="patreon.selectTier">Select Tier</a>
+          </div>
+        </div>
+
+        <div class="patreon-cta">
+          <p class="cta-text" data-i18n="patreon.ctaText">
+            Not ready to commit? You can also make a one-time contribution!
+          </p>
+          <a href="#" class="btn btn-patreon">
+            <span class="patreon-logo">⚡</span>
+            <span data-i18n="patreon.oneTime">One-Time Donation</span>
+          </a>
+        </div>
+
+        <div class="patreon-updates">
+          <h3 data-i18n="patreon.recentUpdates">Recent Development Updates</h3>
+          <div class="updates-grid">
+            <div class="update-card">
+              <div class="update-date">Dec 15, 2024</div>
+              <h4 data-i18n="patreon.update1.title">Character Design Progress</h4>
+              <p data-i18n="patreon.update1.desc">We've finalized the main character designs and started working on animations!</p>
+            </div>
+            <div class="update-card">
+              <div class="update-date">Dec 8, 2024</div>
+              <h4 data-i18n="patreon.update2.title">World Building Phase</h4>
+              <p data-i18n="patreon.update2.desc">The first region of our open world is taking shape with stunning landscapes.</p>
+            </div>
+            <div class="update-card">
+              <div class="update-date">Dec 1, 2024</div>
+              <h4 data-i18n="patreon.update3.title">Combat System Demo</h4>
+              <p data-i18n="patreon.update3.desc">Early prototype of the combat system is ready for alpha testing!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="download">
+    <div class="container">
+      <div class="download-card">
+        <div class="coming-soon-badge">
+          <span data-i18n="download.comingSoon">Coming Soon</span>
+        </div>
+        <h2 data-i18n="download.title">Ready to Start Your Adventure?</h2>
+        <p data-i18n="download.subtitle">Join thousands of players in the world of Hello World!</p>
+        
+        <div class="release-info">
+          <div class="release-item">
+            <div class="release-icon">📅</div>
+            <div class="release-content">
+              <div class="release-label" data-i18n="download.expectedRelease">Expected Release</div>
+              <div class="release-value">Q3 2025</div>
+            </div>
+          </div>
+          <div class="release-item">
+            <div class="release-icon">🎮</div>
+            <div class="release-content">
+              <div class="release-label" data-i18n="download.alphaAccess">Alpha Access</div>
+              <div class="release-value">Q1 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="download-platforms disabled">
+          <a href="#" class="platform-btn disabled">
+            <div class="platform-icon">🖥️</div>
+            <div>
+              <div class="platform-name">Windows</div>
+              <div class="platform-size" data-i18n="download.inDevelopment">In Development</div>
+            </div>
+          </a>
+          <a href="#" class="platform-btn disabled">
+            <div class="platform-icon">🍎</div>
+            <div>
+              <div class="platform-name">macOS</div>
+              <div class="platform-size" data-i18n="download.inDevelopment">In Development</div>
+            </div>
+          </a>
+          <a href="#" class="platform-btn disabled">
+            <div class="platform-icon">🐧</div>
+            <div>
+              <div class="platform-name">Linux</div>
+              <div class="platform-size" data-i18n="download.inDevelopment">In Development</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="wishlist-section">
+          <h3 data-i18n="download.wishlistTitle">Get Notified on Release</h3>
+          <p data-i18n="download.wishlistDesc">Be the first to know when Hello World! launches</p>
+          <form class="wishlist-form">
+            <input type="email" placeholder="Enter your email" class="wishlist-email" required>
+            <button type="submit" class="btn btn-primary">
+              <span data-i18n="download.notify">Notify Me</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="system-requirements">
+          <h4 data-i18n="download.minRequirements">Minimum System Requirements</h4>
+          <p class="requirements-note" data-i18n="download.requirementsNote">
+            (Subject to change during development)
+          </p>
+          <div class="requirements-grid">
+            <div><strong data-i18n="download.os">OS:</strong> <span data-i18n="download.osValue">Windows 10 64-bit</span></div>
+            <div><strong data-i18n="download.processor">Processor:</strong> <span>Intel i5 / AMD Ryzen 5</span></div>
+            <div><strong data-i18n="download.memory">Memory:</strong> <span>8 GB RAM</span></div>
+            <div><strong data-i18n="download.graphics">Graphics:</strong> <span>GTX 1060 / RX 580</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-bracket">&lt;</span>
+            Hello World!
+            <span class="logo-bracket">/&gt;</span>
+          </div>
+          <p data-i18n="footer.copyright">© 2024 Hello World! All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4 data-i18n="footer.game">Game</h4>
+            <a href="#" data-i18n="footer.about">About</a>
+            <a href="#" data-i18n="footer.news">News</a>
+            <a href="#" data-i18n="footer.updates">Updates</a>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.community">Community</h4>
+            <a href="#">Discord</a>
+            <a href="#" data-i18n="footer.forums">Forums</a>
+            <a href="#" data-i18n="footer.wiki">Wiki</a>
+          </div>
+          <div class="footer-column">
+            <h4 data-i18n="footer.support">Support</h4>
+            <a href="#" data-i18n="footer.helpCenter">Help Center</a>
+            <a href="#" data-i18n="footer.contact">Contact</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="footer-social">
+          <h4 data-i18n="footer.followUs">Follow Us</h4>
+          <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">Twitch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
