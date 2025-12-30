@@ -114,7 +114,7 @@ const translations = {
         desc: 'The first region of our open world is taking shape with stunning landscapes.'
       },
       update3: {
-        title: 'Combat System Demo',
+        title: 'Hello World!',
         desc: 'We\'ve finalized the main game mechanisms and started working on design!'
       }
     },
