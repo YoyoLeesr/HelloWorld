@@ -105,18 +105,7 @@ const translations = {
       ctaText: 'Not ready to commit? You can also make a one-time contribution!',
       oneTime: 'One-Time Donation',
       recentUpdates: 'Recent Development Updates',
-      update1: {
-        title: 'Character Design Progress',
-        desc: 'We\'ve finalized the main character designs and started working on animations!'
-      },
-      update2: {
-        title: 'World Building Phase',
-        desc: 'The first region of our open world is taking shape with stunning landscapes.'
-      },
-      update3: {
-        title: 'Combat System Demo',
-        desc: 'Early prototype of the combat system is ready for alpha testing!'
-      }
+      viewAllUpdates: 'View All Updates'
     },
     download: {
       comingSoon: 'Coming Soon',
@@ -257,18 +246,7 @@ const translations = {
       ctaText: '还没准备好承诺？您也可以进行一次性捐赠！',
       oneTime: '一次性捐赠',
       recentUpdates: '最新开发动态',
-      update1: {
-        title: '角色设计进展',
-        desc: '我们已经完成了主要角色设计，并开始制作动画！'
-      },
-      update2: {
-        title: '世界构建阶段',
-        desc: '开放世界的第一个区域正在成形，拥有令人惊叹的景观。'
-      },
-      update3: {
-        title: '战斗系统演示',
-        desc: '战斗系统的早期原型已准备好进行Alpha测试！'
-      }
+      viewAllUpdates: '查看所有更新'
     },
     download: {
       comingSoon: '即将推出',
@@ -327,6 +305,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Update stats from config.js (if available)
   updateStats();
+  
+  // Update dev updates from config.js
+  updateDevUpdates();
   
   // Header scroll effect
   function handleScroll() {
@@ -435,6 +416,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update email placeholder
     updatePlaceholders(lang);
+    
+    // Update dev updates with new language
+    updateDevUpdates();
   }
   
   // Helper function to get nested translation
@@ -506,6 +490,36 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
       console.error('Error updating stats:', error);
     }
+  }
+  
+  // Update development updates from config
+  function updateDevUpdates() {
+    if (typeof gameStats === 'undefined' || !gameStats.updates) {
+      console.warn('No updates found in config.js');
+      return;
+    }
+    
+    const updateCards = document.querySelectorAll('.update-card');
+    
+    gameStats.updates.forEach((update, index) => {
+      if (updateCards[index]) {
+        const dateEl = updateCards[index].querySelector('.update-date');
+        const titleEl = updateCards[index].querySelector('h4');
+        const descEl = updateCards[index].querySelector('p');
+        
+        if (dateEl) dateEl.textContent = update.date;
+        if (titleEl) {
+          titleEl.textContent = currentLang === 'zh' ? update.titleZH : update.titleEN;
+          titleEl.removeAttribute('data-i18n');
+        }
+        if (descEl) {
+          descEl.textContent = currentLang === 'zh' ? update.descZH : update.descEN;
+          descEl.removeAttribute('data-i18n');
+        }
+      }
+    });
+    
+    console.log('✅ Development updates loaded from config.js');
   }
   
   // Video placeholder click

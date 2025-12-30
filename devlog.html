@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Hello World! Development Blog - Follow our journey as we build an epic 3D RPG FPS game">
+  <meta name="keywords" content="Hello World, Game Development, Dev Blog, RPG, FPS">
+  <meta name="author" content="Hello World Team">
+  
+  <title>Development Blog - Hello World!</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Dev Blog Specific Styles */
+    .devlog-page {
+      min-height: 100vh;
+      padding-top: 100px;
+    }
+    
+    .devlog-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      padding: 10px 20px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      border-radius: 10px;
+    }
+    
+    .back-link:hover {
+      background: rgba(0, 255, 136, 0.1);
+      transform: translateX(-5px);
+    }
+    
+    .devlog-header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid rgba(0, 255, 136, 0.2);
+    }
+    
+    .devlog-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.3));
+    }
+    
+    .devlog-subtitle {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    
+    .devlog-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .devlog-stat {
+      font-size: 14px;
+      color: var(--gray);
+    }
+    
+    .devlog-stat strong {
+      color: var(--primary);
+      font-size: 20px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .filter-tags {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 15px;
+      border: 1px solid rgba(0, 255, 136, 0.2);
+    }
+    
+    .filter-tag {
+      padding: 8px 20px;
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    
+    .filter-tag:hover,
+    .filter-tag.active {
+      background: var(--primary);
+      color: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+    }
+    
+    .devlog-entries {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .devlog-entry {
+      background: var(--card-bg);
+      border: 2px solid rgba(255, 0, 255, 0.2);
+      border-radius: 20px;
+      padding: 35px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .devlog-entry::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .devlog-entry:hover {
+      border-color: var(--accent);
+      box-shadow: 0 15px 50px rgba(255, 0, 255, 0.3);
+      transform: translateY(-5px);
+    }
+    
+    .devlog-entry:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .devlog-entry.featured {
+      border-color: var(--accent);
+      box-shadow: 0 10px 40px rgba(255, 0, 255, 0.2);
+    }
+    
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--dark);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+    
+    .devlog-date {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      display: inline-block;
+      padding: 5px 15px;
+      background: rgba(255, 0, 255, 0.1);
+      border-radius: 20px;
+    }
+    
+    .devlog-entry h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    }
+    
+    body[lang="zh"] .devlog-entry h2 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+    
+    .devlog-entry p {
+      color: var(--gray);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .devlog-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .tag {
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    
+    .no-updates {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray);
+      font-size: 18px;
+    }
+    
+    /* Language Switcher for Dev Blog */
+    .devlog-lang-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 5px;
+      background: rgba(0, 255, 136, 0.1);
+      padding: 5px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    .devlog-lang-btn {
+      padding: 8px 16px;
+      background: transparent;
+      border: none;
+      color: var(--gray);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+    
+    .devlog-lang-btn.active {
+      background: var(--gradient);
+      color: var(--dark);
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+      font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+      .devlog-entry {
+        padding: 25px;
+      }
+      
+      .devlog-entry h2 {
+        font-size: 24px;
+      }
+      
+      .filter-tags {
+        padding: 15px;
+      }
+      
+      .devlog-lang-switcher {
+        top: 10px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-animation"></div>
+  
+  <!-- Language Switcher -->
+  <div class="devlog-lang-switcher">
+    <button class="devlog-lang-btn active" data-lang="en">EN</button>
+    <button class="devlog-lang-btn" data-lang="zh">中文</button>
+  </div>
+  
+  <div class="devlog-page">
+    <div class="devlog-container">
+      <a href="index.html" class="back-link">
+        ← <span data-i18n="devlog.back">Back to Home</span>
+      </a>
+      
+      <div class="devlog-header">
+        <h1 class="devlog-title" data-i18n="devlog.title">Development Blog</h1>
+        <p class="devlog-subtitle" data-i18n="devlog.subtitle">Follow our journey as we build Hello World!</p>
+        
+        <div class="devlog-stats">
+          <div class="devlog-stat">
+            <strong id="total-updates">0</strong>
+            <span data-i18n="devlog.totalUpdates">Total Updates</span>
+          </div>
+          <div class="devlog-stat">
+            <strong id="latest-date">-</strong>
+            <span data-i18n="devlog.latestUpdate">Latest Update</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="filter-tags" id="filter-tags">
+        <button class="filter-tag active" data-filter="all" data-i18n="devlog.filterAll">All</button>
+        <!-- Tags will be generated dynamically -->
+      </div>
+      
+      <div class="devlog-entries" id="devlog-entries">
+        <!-- Entries will be loaded here by JavaScript -->
+      </div>
+    </div>
+  </div>
+  
+  <script src="devlog-data.js"></script>
+  <script>
+    // Translation system for dev blog
+    const devlogTranslations = {
+      en: {
+        devlog: {
+          back: 'Back to Home',
+          title: 'Development Blog',
+          subtitle: 'Follow our journey as we build Hello World!',
+          totalUpdates: 'Total Updates',
+          latestUpdate: 'Latest Update',
+          filterAll: 'All',
+          noUpdates: 'No updates found for this filter.',
+          featured: 'Featured'
+        }
+      },
+      zh: {
+        devlog: {
+          back: '返回首页',
+          title: '开发博客',
+          subtitle: '跟随我们一起构建 Hello World！',
+          totalUpdates: '总更新数',
+          latestUpdate: '最新更新',
+          filterAll: '全部',
+          noUpdates: '未找到符合此筛选条件的更新。',
+          featured: '精选'
+        }
+      }
+    };
+    
+    let currentLang = localStorage.getItem('language') || 'en';
+    let currentFilter = 'all';
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      initLanguage();
+      generateFilterTags();
+      loadDevLog();
+      updateStats();
+      
+      // Language switcher
+      document.querySelectorAll('.devlog-lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          document.querySelectorAll('.devlog-lang-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentLang = lang;
+          localStorage.setItem('language', lang);
+          updateLanguage();
+          loadDevLog();
+        });
+      });
+      
+      // Set active language button
+      document.querySelectorAll('.devlog-lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    });
+    
+    function initLanguage() {
+      document.body.setAttribute('lang', currentLang);
+      updateLanguage();
+    }
+    
+    function updateLanguage() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = getTranslation(key);
+        if (translation) {
+          el.textContent = translation;
+        }
+      });
+    }
+    
+    function getTranslation(key) {
+      const keys = key.split('.');
+      let value = devlogTranslations[currentLang];
+      for (const k of keys) {
+        value = value?.[k];
+      }
+      return value;
+    }
+    
+    function generateFilterTags() {
+      const allTags = new Set();
+      devLog.updates.forEach(update => {
+        if (update.tags) {
+          update.tags.forEach(tag => allTags.add(tag));
+        }
+      });
+      
+      const filterContainer = document.getElementById('filter-tags');
+      allTags.forEach(tag => {
+        const button = document.createElement('button');
+        button.className = 'filter-tag';
+        button.setAttribute('data-filter', tag);
+        button.textContent = '#' + tag;
+        button.addEventListener('click', function() {
+          document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = tag;
+          loadDevLog();
+        });
+        filterContainer.appendChild(button);
+      });
+    }
+    
+    function loadDevLog() {
+      const container = document.getElementById('devlog-entries');
+      container.innerHTML = '';
+      
+      let updates = devLog.updates;
+      
+      // Filter updates
+      if (currentFilter !== 'all') {
+        updates = updates.filter(update => 
+          update.tags && update.tags.includes(currentFilter)
+        );
+      }
+      
+      if (updates.length === 0) {
+        container.innerHTML = `<div class="no-updates">${getTranslation('devlog.noUpdates')}</div>`;
+        return;
+      }
+      
+      updates.forEach(update => {
+        const entry = document.createElement('div');
+        entry.className = 'devlog-entry';
+        if (update.featured) {
+          entry.classList.add('featured');
+        }
+        entry.id = update.id;
+        
+        const title = currentLang === 'zh' ? update.titleZH : update.titleEN;
+        const desc = currentLang === 'zh' ? update.descZH : update.descEN;
+        
+        let tagsHTML = '';
+        if (update.tags) {
+          tagsHTML = '<div class="devlog-tags">' + 
+            update.tags.map(tag => `<span class="tag">#${tag}</span>`).join('') +
+            '</div>';
+        }
+        
+        let featuredBadge = '';
+        if (update.featured) {
+          featuredBadge = `<div class="featured-badge">${getTranslation('devlog.featured')}</div>`;
+        }
+        
+        entry.innerHTML = `
+          ${featuredBadge}
+          <div class="devlog-date">${update.date}</div>
+          <h2>${title}</h2>
+          <p>${desc}</p>
+          ${tagsHTML}
+        `;
+        
+        container.appendChild(entry);
+      });
+    }
+    
+    function updateStats() {
+      document.getElementById('total-updates').textContent = devLog.totalUpdates;
+      document.getElementById('latest-date').textContent = devLog.latestUpdate.date;
+    }
+  </script>
+</body>
+</html>
