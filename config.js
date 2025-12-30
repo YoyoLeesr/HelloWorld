@@ -1,5 +1,5 @@
 // config.js - Update this file whenever your stats change
-// Last updated: 2025-12-29
+// Last updated: 2025-12-30
 
 const gameStats = {
   // ========================================
@@ -22,13 +22,13 @@ const gameStats = {
   // ========================================
   // RELEASE DATES (Update as needed)
   // ========================================
-  alphaDate: 'Q1 2025',      // When alpha testing begins
-  releaseDate: 'Q3 2025',    // Expected full release
+  alphaDate: 'Q1 2027',      // When alpha testing begins
+  releaseDate: 'Q3 2027',    // Expected full release
   
   // ========================================
   // METADATA (Optional)
   // ========================================
-  lastUpdated: '2024-12-15',
+  lastUpdated: '2025-12-30',
   version: '1.0.0'
 };
 
