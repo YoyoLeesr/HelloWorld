@@ -22,10 +22,10 @@ Hello World! is an ambitious 3D RPG FPS that combines the depth of role-playing 
 
 **Pre-Development Phase**
 
-- 🎮 Alpha Access: Q1 2025
-- 🚀 Expected Release: Q3 2025
+- 🎮 Alpha Access: Q1 2027
+- 🚀 Expected Release: Q3 2027
 - 💰 Funding Goal: $10,000
-- 📊 Current Progress: 24.5%
+- 📊 Current Progress: 0.0%
 
 ## 💜 Support Development
 
@@ -85,27 +85,27 @@ Help bring Hello World! to life!
 
 - 👥 127 Backers
 - 🌟 50K+ Followers
-- 💰 $2,450 Raised
-- 🎯 24.5% Funded
+- 💰 $0 Raised
+- 🎯 0.0% Funded
 
 ## 🎯 Roadmap
 
-### Q4 2024
+### Q4 2025
 - [x] Website launch
 - [x] Community building
 - [ ] Character design completion
 
-### Q1 2025
+### Q1 2027
 - [ ] Alpha testing begins
 - [ ] Combat system demo
 - [ ] First playable build
 
-### Q2 2025
+### Q2 2027
 - [ ] Beta testing
 - [ ] Multiplayer implementation
 - [ ] World expansion
 
-### Q3 2025
+### Q3 2027
 - [ ] Official release
 - [ ] Launch events
 - [ ] Post-launch support
@@ -123,7 +123,7 @@ This is a commercial project, but we welcome:
 
 ## 📄 License
 
-© 2024 Hello World! All rights reserved.
+© 2025 Hello World! All rights reserved.
 
 ---
 
