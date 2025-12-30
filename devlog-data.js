@@ -59,3 +59,4 @@ const devLog = {
 };
 
 console.log('📚 Dev Log Loaded:', devLog.totalUpdates, 'updates');
+console.log('📝 Latest:', devLog.latestUpdate.titleEN);

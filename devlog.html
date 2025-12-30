@@ -58,8 +58,13 @@
       background: linear-gradient(135deg, var(--accent), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;  /* ← FIXED */
       margin-bottom: 15px;
       filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.3));
+    }
+    
+    body[lang="zh"] .devlog-title {
+      font-family: 'Noto Sans SC', sans-serif;
     }
     
     .devlog-subtitle {
@@ -165,7 +170,7 @@
       box-shadow: 0 10px 40px rgba(255, 0, 255, 0.2);
     }
     
-    .featured-badge {
+    .entry-featured-badge {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -268,7 +273,7 @@
     }
     
     .devlog-lang-btn.active {
-      background: var(--gradient);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--dark);
       box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
       font-weight: 700;
@@ -371,10 +376,18 @@
     
     // Initialize
     document.addEventListener('DOMContentLoaded', function() {
+      // Check if devLog exists
+      if (typeof devLog === 'undefined') {
+        console.error('❌ devLog not found! Make sure devlog-data.js is loaded.');
+        document.getElementById('devlog-entries').innerHTML = 
+          '<div class="no-updates">Error: Development log data not found. Please check devlog-data.js file.</div>';
+        return;
+      }
+      
       initLanguage();
       generateFilterTags();
       loadDevLog();
-      updateStats();
+      updateStatsDisplay();
       
       // Language switcher
       document.querySelectorAll('.devlog-lang-btn').forEach(btn => {
@@ -384,6 +397,7 @@
           this.classList.add('active');
           currentLang = lang;
           localStorage.setItem('language', lang);
+          document.body.setAttribute('lang', lang);
           updateLanguage();
           loadDevLog();
         });
@@ -425,6 +439,12 @@
     
     function generateFilterTags() {
       const allTags = new Set();
+      
+      if (!devLog || !devLog.updates) {
+        console.error('No updates found in devLog');
+        return;
+      }
+      
       devLog.updates.forEach(update => {
         if (update.tags) {
           update.tags.forEach(tag => allTags.add(tag));
@@ -432,6 +452,7 @@
       });
       
       const filterContainer = document.getElementById('filter-tags');
+      
       allTags.forEach(tag => {
         const button = document.createElement('button');
         button.className = 'filter-tag';
@@ -450,6 +471,11 @@
     function loadDevLog() {
       const container = document.getElementById('devlog-entries');
       container.innerHTML = '';
+      
+      if (!devLog || !devLog.updates) {
+        container.innerHTML = '<div class="no-updates">No updates available.</div>';
+        return;
+      }
       
       let updates = devLog.updates;
       
@@ -485,7 +511,8 @@
         
         let featuredBadge = '';
         if (update.featured) {
-          featuredBadge = `<div class="featured-badge">${getTranslation('devlog.featured')}</div>`;
+          const featuredText = getTranslation('devlog.featured');
+          featuredBadge = `<div class="entry-featured-badge">${featuredText}</div>`;
         }
         
         entry.innerHTML = `
@@ -498,11 +525,18 @@
         
         container.appendChild(entry);
       });
+      
+      console.log('✅ Loaded', updates.length, 'dev log entries');
     }
     
-    function updateStats() {
-      document.getElementById('total-updates').textContent = devLog.totalUpdates;
-      document.getElementById('latest-date').textContent = devLog.latestUpdate.date;
+    function updateStatsDisplay() {
+      if (!devLog) return;
+      
+      const totalEl = document.getElementById('total-updates');
+      const latestEl = document.getElementById('latest-date');
+      
+      if (totalEl) totalEl.textContent = devLog.totalUpdates;
+      if (latestEl && devLog.latestUpdate) latestEl.textContent = devLog.latestUpdate.date;
     }
   </script>
 </body>

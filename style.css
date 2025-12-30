@@ -238,7 +238,7 @@ body[lang="zh"] .logo {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text;  /* ← ADD THIS LINE */
   margin-bottom: 20px;
   line-height: 1.1;
   filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.3));
@@ -735,7 +735,7 @@ body[lang="zh"] .gameplay-info h3 {
   background: linear-gradient(135deg, var(--accent), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text;  /* ← ADD THIS LINE */
 }
 
 body[lang="zh"] .patreon-title {
