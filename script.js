@@ -106,8 +106,8 @@ const translations = {
       oneTime: 'One-Time Donation',
       recentUpdates: 'Recent Development Updates',
       update1: {
-        title: 'Character Design Progress',
-        desc: 'We\'ve finalized the main character designs and started working on animations!'
+        title: 'Combat System Demo',
+        desc: 'Early prototype of the combat system is ready for alpha testing!'
       },
       update2: {
         title: 'World Building Phase',
@@ -115,7 +115,7 @@ const translations = {
       },
       update3: {
         title: 'Combat System Demo',
-        desc: 'Early prototype of the combat system is ready for alpha testing!'
+        desc: 'We\'ve finalized the main game mechanisms and started working on design!'
       }
     },
     download: {
@@ -138,7 +138,7 @@ const translations = {
       graphics: 'Graphics:'
     },
     footer: {
-      copyright: '© 2024 Hello World! All rights reserved.',
+      copyright: '© 2026 Hello World! All rights reserved.',
       game: 'Game',
       about: 'About',
       news: 'News',
@@ -258,16 +258,16 @@ const translations = {
       oneTime: '一次性捐赠',
       recentUpdates: '最新开发动态',
       update1: {
-        title: '角色设计进展',
-        desc: '我们已经完成了主要角色设计，并开始制作动画！'
+        title: '战斗系统演示',
+        desc: '战斗系统的早期原型已准备好进行Alpha测试！'
       },
       update2: {
         title: '世界构建阶段',
         desc: '开放世界的第一个区域正在成形，拥有令人惊叹的景观。'
       },
       update3: {
-        title: '战斗系统演示',
-        desc: '战斗系统的早期原型已准备好进行Alpha测试！'
+        title: '游戏设计进展',
+        desc: '我们正在定位游戏内容以及设计方向！'
       }
     },
     download: {
@@ -290,7 +290,7 @@ const translations = {
       graphics: '显卡：'
     },
     footer: {
-      copyright: '© 2024 Hello World! 版权所有。',
+      copyright: '© 2026 Hello World! 版权所有。',
       game: '游戏',
       about: '关于',
       news: '新闻',
