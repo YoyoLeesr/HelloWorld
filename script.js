@@ -106,6 +106,7 @@ const translations = {
       oneTime: 'One-Time Donation',
       recentUpdates: 'Recent Development Updates',
       viewAllUpdates: 'View All Updates'
+
     },
     download: {
       comingSoon: 'Coming Soon',
@@ -127,7 +128,7 @@ const translations = {
       graphics: 'Graphics:'
     },
     footer: {
-      copyright: '© 2024 Hello World! All rights reserved.',
+      copyright: '© 2026 Hello World! All rights reserved.',
       game: 'Game',
       about: 'About',
       news: 'News',
@@ -268,7 +269,7 @@ const translations = {
       graphics: '显卡：'
     },
     footer: {
-      copyright: '© 2024 Hello World! 版权所有。',
+      copyright: '© 2026 Hello World! 版权所有。',
       game: '游戏',
       about: '关于',
       news: '新闻',

@@ -1,5 +1,6 @@
 // config.js - Update this file whenever your stats change
-// Last updated: 2024-12-30
+// Last updated: 2025-12-30
+
 
 const gameStats = {
   // ========================================
@@ -20,13 +21,16 @@ const gameStats = {
   // ========================================
   // RELEASE DATES
   // ========================================
+
   alphaDate: 'Q1 2027',
   releaseDate: 'Q3 2027',
+
   
   // ========================================
   // LATEST 3 UPDATES (for homepage)
   // When adding new update: Add at top, remove oldest
   // ========================================
+
   updates: [
     {
       date: 'Dec 15, 2025',
@@ -54,6 +58,7 @@ const gameStats = {
   // ========================================
   // METADATA
   // ========================================
+
   lastUpdated: '2025-12-30',
   version: '1.0.0'
 };
