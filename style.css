@@ -582,6 +582,7 @@ body[lang="zh"] .feature-card h3 {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1;
+  gap: 20px;
 }
 
 .video-placeholder:hover {
@@ -591,9 +592,11 @@ body[lang="zh"] .feature-card h3 {
 .play-button {
   font-size: 64px;
   color: #00ff88;
-  margin-bottom: 20px;
   transition: transform 0.3s ease;
   line-height: 1;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 .video-placeholder:hover .play-button {
