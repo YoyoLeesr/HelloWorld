@@ -177,19 +177,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // One-time donation button: same behavior
-    const oneTimeBtn = document.querySelector('.btn-patreon');
-    if (oneTimeBtn) {
-        oneTimeBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.open(this.href, '_blank', 'noopener');
-            const messages = {
-                en: 'Redirecting to Patreon...',
-                zh: '正在跳转到 Patreon...'
-            };
-            showPopup(messages[currentLang]);
-        });
-    }
+// One-time donation button: open gift link in new tab + show popup
+const oneTimeBtn = document.querySelector('.btn-patreon');
+if (oneTimeBtn) {
+    oneTimeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Open in new tab
+        window.open(this.href, '_blank', 'noopener');
+        // Show popup message
+        const messages = {
+            en: 'Redirecting to Patreon Gift Page...',
+            zh: '正在跳转到 Patreon 礼物页面...'
+        };
+        showPopup(messages[currentLang]);
+    });
+}
 
     // Popup function (non-blocking)
     function showPopup(message) {
