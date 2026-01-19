@@ -396,25 +396,19 @@ langButtons.forEach(function(btn) {
   }
   
   // Change language function
-  function changeLanguage(lang) {
-  currentLang = lang;  // make sure we store it here
-  document.body.setAttribute('lang', lang);
+function changeLanguage(lang) {
+    document.body.setAttribute('lang', lang);
 
-  // Update generic text from translations
-  const elements = document.querySelectorAll('[data-i18n]');
-  elements.forEach(function(element) {
-    const key = element.getAttribute('data-i18n');
-    const translation = getNestedTranslation(translations[lang], key);
-    if (translation) {
-      element.textContent = translation;
-    }
-  });
+    // Update general page text
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = getNestedTranslation(translations[lang], key);
+        if (translation) el.textContent = translation;
+    });
 
-  // Update placeholders
-  updatePlaceholders(lang);
-
-  // Now update dev updates after setting currentLang explicitly
-  updateDevUpdates();
+    updatePlaceholders(lang);
+    updateDevUpdates(); 
 }
   
   // Helper function to get nested translation
