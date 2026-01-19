@@ -557,12 +557,11 @@ body[lang="zh"] .feature-card h3 {
 
 .video-container {
   position: relative;
-  border-radius: 15px;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
   overflow: hidden;
-  background: var(--card-bg);
-  border: 2px solid var(--primary);
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
-  transition: all 0.3s ease;
+  border-radius: 12px;
 }
 
 .video-container:hover {
@@ -570,14 +569,14 @@ body[lang="zh"] .feature-card h3 {
   box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
 }
 
-.video-placeholder {
-  aspect-ratio: 16/9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.video-placeholder,
+#videoFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
 }
 
 .video-placeholder:hover {
