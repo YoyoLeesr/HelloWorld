@@ -3,7 +3,227 @@
 // =======================
 // (Use your existing translations object from before here)
 const translations = {
-    // ... your big translations.en and translations.zh objects ...
+  en: {
+    nav: {
+      home: 'Home',
+      features: 'Features',
+      gameplay: 'Gameplay',
+      support: 'Support',
+      download: 'Download'
+    },
+    hero: {
+      subtitle: 'Enter a new dimension of combat',
+      description: 'Experience the ultimate fusion of RPG depth and FPS intensity in a stunning 3D world',
+      supportNow: 'Support Now',
+      watchTrailer: 'Watch Trailer',
+      followers: 'Followers',
+      backers: 'Backers',
+      funded: 'Funded',
+      scrollToExplore: 'Scroll to explore'
+    },
+    features: {
+      title: 'Game Features',
+      openWorld: { title: 'Massive Open World', desc: 'Explore a vast 3D universe filled with secrets, dungeons, and epic landscapes' },
+      combat: { title: 'Dynamic Combat', desc: 'Master both ranged and melee combat with fluid FPS mechanics and RPG abilities' },
+      customization: { title: 'Character Customization', desc: 'Create your unique hero with deep skill trees and endless equipment options' },
+      multiplayer: { title: 'Multiplayer Co-op', desc: 'Team up with friends in epic raids and PvP battles' },
+      story: { title: 'Rich Storyline', desc: 'Uncover the mysteries of the digital realm in an immersive narrative' },
+      graphics: { title: 'Stunning Graphics', desc: 'Experience breathtaking visuals powered by cutting-edge technology' }
+    },
+    gameplay: {
+      title: 'Gameplay Preview',
+      subtitle: 'Immersive Combat Experience',
+      clickToWatch: 'Click to watch trailer',
+      ai: { title: 'Advanced AI Enemies', desc: 'Face intelligent foes that adapt to your playstyle' },
+      strategy: { title: 'Real-time Strategy', desc: 'Plan your attacks and use the environment to your advantage' },
+      crafting: { title: 'Weapon Crafting', desc: 'Forge legendary weapons from materials found in your journey' },
+      bosses: { title: 'Boss Battles', desc: 'Challenge epic bosses that require skill and strategy to defeat' }
+    },
+    patreon: {
+      badge: 'Pre-Development',
+      title: 'Support the Development',
+      subtitle: 'Hello World! is currently in pre-development. Your support will help bring this epic adventure to life!',
+      raised: 'Raised',
+      goal: 'Goal',
+      backers: 'Backers',
+      perMonth: '/month',
+      mostPopular: 'Most Popular',
+      selectTier: 'Select Tier',
+      ctaText: 'Not ready to commit? You can also make a one-time contribution!',
+      oneTime: 'One-Time Donation',
+      recentUpdates: 'Recent Development Updates',
+      viewAllUpdates: 'View All Updates',
+      tiers: {
+        supporter: {
+          name: 'Supporter',
+          benefit1: 'Access to development blog',
+          benefit2: 'Discord supporter role',
+          benefit3: 'Your name in credits',
+          benefit4: 'Exclusive wallpapers'
+        },
+        champion: {
+          name: 'Champion',
+          benefit1: 'All Supporter benefits',
+          benefit2: 'Early alpha access',
+          benefit3: 'Exclusive in-game items',
+          benefit4: 'Monthly dev Q&A',
+          benefit5: 'Vote on game features'
+        },
+        legend: {
+          name: 'Legend',
+          benefit1: 'All Champion benefits',
+          benefit2: 'Design your own NPC',
+          benefit3: 'Private Discord channel',
+          benefit4: 'Lifetime game license',
+          benefit5: 'Special edition merchandise',
+          benefit6: 'Video call with dev team'
+        }
+      }
+    },
+    download: {
+      comingSoon: 'Coming Soon',
+      title: 'Ready to Start Your Adventure?',
+      subtitle: 'Join thousands of players in the world of Hello World!',
+      expectedRelease: 'Expected Release',
+      alphaAccess: 'Alpha Access',
+      inDevelopment: 'In Development',
+      wishlistTitle: 'Get Notified on Release',
+      wishlistDesc: 'Be the first to know when Hello World! launches',
+      notify: 'Notify Me',
+      minRequirements: 'Minimum System Requirements',
+      requirementsNote: '(Subject to change during development)',
+      os: 'OS:',
+      osValue: 'Windows 10 64-bit',
+      processor: 'Processor:',
+      memory: 'Memory:',
+      graphics: 'Graphics:'
+    },
+    footer: {
+      copyright: '© 2026 Hello World! All rights reserved.',
+      game: 'Game',
+      about: 'About',
+      news: 'News',
+      updates: 'Updates',
+      community: 'Community',
+      forums: 'Forums',
+      wiki: 'Wiki',
+      support: 'Support',
+      helpCenter: 'Help Center',
+      contact: 'Contact',
+      followUs: 'Follow Us'
+    }
+  },
+  zh: {
+    nav: {
+      home: '首页',
+      features: '特色',
+      gameplay: '游戏玩法',
+      support: '支持',
+      download: '下载'
+    },
+    hero: {
+      subtitle: '进入全新的战斗维度',
+      description: '在令人惊叹的3D世界中体验RPG深度与FPS强度的终极融合',
+      supportNow: '立即支持',
+      watchTrailer: '观看预告',
+      followers: '关注者',
+      backers: '支持者',
+      funded: '已筹集',
+      scrollToExplore: '向下滚动探索'
+    },
+    features: {
+      title: '游戏特色',
+      openWorld: { title: '庞大开放世界', desc: '探索充满秘密、地下城和史诗景观的广阔3D宇宙' },
+      combat: { title: '动态战斗', desc: '掌握远程与近战战斗，流畅的FPS机制结合RPG能力' },
+      customization: { title: '角色定制', desc: '通过深度技能树和无限装备选项塑造独特英雄' },
+      multiplayer: { title: '多人合作', desc: '与朋友组队参加史诗团队副本和PvP战斗' },
+      story: { title: '丰富剧情', desc: '在沉浸式叙事中揭开数字领域的奥秘' },
+      graphics: { title: '震撼画面', desc: '体验由尖端技术驱动的惊艳视觉效果' }
+    },
+    gameplay: {
+      title: '游戏预览',
+      subtitle: '沉浸式战斗体验',
+      clickToWatch: '点击观看预告片',
+      ai: { title: '高级AI敌人', desc: '面对能适应你玩法的智能敌人' },
+      strategy: { title: '实时策略', desc: '策划攻击并利用环境优势' },
+      crafting: { title: '武器锻造', desc: '用旅途中找到的材料锻造传奇武器' },
+      bosses: { title: 'Boss战斗', desc: '挑战需要技巧和策略的史诗Boss' }
+    },
+    patreon: {
+      badge: '预开发阶段',
+      title: '支持开发',
+      subtitle: 'Hello World! 当前处于预开发阶段。您的支持将帮助这一史诗冒险成为现实！',
+      raised: '已筹集',
+      goal: '目标',
+      backers: '支持者',
+      perMonth: '/月',
+      mostPopular: '最受欢迎',
+      selectTier: '选择等级',
+      ctaText: '还没准备好承诺？您也可以进行一次性捐赠！',
+      oneTime: '一次性捐赠',
+      recentUpdates: '最新开发动态',
+      viewAllUpdates: '查看所有更新',
+      tiers: {
+        supporter: {
+          name: '支持者',
+          benefit1: '访问开发博客',
+          benefit2: 'Discord支持者角色',
+          benefit3: '您的名字在制作人员名单中',
+          benefit4: '独家壁纸'
+        },
+        champion: {
+          name: '勇士',
+          benefit1: '所有支持者福利',
+          benefit2: '提前体验Alpha版本',
+          benefit3: '独家游戏内物品',
+          benefit4: '每月开发者问答',
+          benefit5: '参与游戏功能投票'
+        },
+        legend: {
+          name: '传奇',
+          benefit1: '所有勇士福利',
+          benefit2: '设计你自己的NPC',
+          benefit3: '私人Discord频道',
+          benefit4: '终身游戏许可',
+          benefit5: '特别版周边商品',
+          benefit6: '与开发团队视频通话'
+        }
+      }
+    },
+    download: {
+      comingSoon: '即将推出',
+      title: '准备开始你的冒险了吗？',
+      subtitle: '加入成千上万的玩家，进入Hello World的世界！',
+      expectedRelease: '预计发布',
+      alphaAccess: 'Alpha测试',
+      inDevelopment: '开发中',
+      wishlistTitle: '获取发布通知',
+      wishlistDesc: '第一时间了解Hello World的发布信息',
+      notify: '通知我',
+      minRequirements: '最低系统要求',
+      requirementsNote: '(开发过程中可能会有变化)',
+      os: '操作系统：',
+      osValue: 'Windows 10 64位',
+      processor: '处理器：',
+      memory: '内存：',
+      graphics: '显卡：'
+    },
+    footer: {
+      copyright: '© 2026 Hello World! 版权所有。',
+      game: '游戏',
+      about: '关于',
+      news: '新闻',
+      updates: '更新',
+      community: '社区',
+      forums: '论坛',
+      wiki: '百科',
+      support: '支持',
+      helpCenter: '帮助中心',
+      contact: '联系',
+      followUs: '关注我们'
+    }
+  }
+};
 };
 
 document.addEventListener('DOMContentLoaded', function () {
