@@ -181,15 +181,12 @@ document.addEventListener('DOMContentLoaded', function () {
 const oneTimeBtn = document.querySelector('.btn-patreon');
 if (oneTimeBtn) {
     oneTimeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Open in new tab
-        window.open(this.href, '_blank', 'noopener');
-        // Show popup message
-        const messages = {
-            en: 'Redirecting to Patreon Gift Page...',
-            zh: '正在跳转到 Patreon 礼物页面...'
-        };
-        showPopup(messages[currentLang]);
+        e.preventDefault(); // stop normal navigation
+        const giftLink = 'https://www.patreon.com/YoyoLee520/gift';
+        window.open(giftLink, '_blank', 'noopener'); // opens immediately
+        showPopup(currentLang === 'zh'
+            ? '正在跳转到 Patreon 礼物页面...'
+            : 'Opening Patreon Gift Page...');
     });
 }
 
