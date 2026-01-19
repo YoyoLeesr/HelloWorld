@@ -492,34 +492,32 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Update development updates from config
-  function updateDevUpdates() {
-    if (typeof gameStats === 'undefined' || !gameStats.updates) {
-      console.warn('No updates found in config.js');
-      return;
-    }
-    
-    const updateCards = document.querySelectorAll('.update-card');
-    
-    gameStats.updates.forEach((update, index) => {
-      if (updateCards[index]) {
-        const dateEl = updateCards[index].querySelector('.update-date');
-        const titleEl = updateCards[index].querySelector('h4');
-        const descEl = updateCards[index].querySelector('p');
-        
-        if (dateEl) dateEl.textContent = update.date;
-        if (titleEl) {
-          titleEl.textContent = currentLang === 'zh' ? update.titleZH : update.titleEN;
-          titleEl.removeAttribute('data-i18n');
-        }
-        if (descEl) {
-          descEl.textContent = currentLang === 'zh' ? update.descZH : update.descEN;
-          descEl.removeAttribute('data-i18n');
-        }
-      }
-    });
-    
-    console.log('✅ Development updates loaded from config.js');
+function updateDevUpdates() {
+  if (typeof gameStats === 'undefined' || !gameStats.updates) {
+    console.warn('No updates found in config.js');
+    return;
   }
+  const updateCards = document.querySelectorAll('.update-card');
+
+  gameStats.updates.forEach((update, index) => {
+    if (updateCards[index]) {
+      const dateEl = updateCards[index].querySelector('.update-date');
+      const titleEl = updateCards[index].querySelector('h4');
+      const descEl = updateCards[index].querySelector('p');
+
+      if (dateEl) dateEl.textContent = update.date;
+      if (titleEl) {
+        titleEl.textContent = currentLang === 'en' ? update.titleEN : update.titleZH;
+        titleEl.removeAttribute('data-i18n');
+      }
+      if (descEl) {
+        descEl.textContent = currentLang === 'en' ? update.descEN : update.descZH;
+        descEl.removeAttribute('data-i18n');
+      }
+    }
+  });
+  console.log('✅ Development updates loaded from config.js');
+}
   
   // Video placeholder click
   if (videoPlaceholder) {
