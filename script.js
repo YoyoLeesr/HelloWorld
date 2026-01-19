@@ -224,7 +224,6 @@ const translations = {
     }
   }
 };
-};
 
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
