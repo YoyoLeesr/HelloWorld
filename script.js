@@ -400,27 +400,25 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Change language function
   function changeLanguage(lang) {
-    // Update body lang attribute
-    document.body.setAttribute('lang', lang);
-    
-    // Get all elements with data-i18n attribute
-    const elements = document.querySelectorAll('[data-i18n]');
-    
-    elements.forEach(function(element) {
-      const key = element.getAttribute('data-i18n');
-      const translation = getNestedTranslation(translations[lang], key);
-      
-      if (translation) {
-        element.textContent = translation;
-      }
-    });
-    
-    // Update email placeholder
-    updatePlaceholders(lang);
-    
-    // Update dev updates with new language
-    updateDevUpdates();
-  }
+  currentLang = lang;  // make sure we store it here
+  document.body.setAttribute('lang', lang);
+
+  // Update generic text from translations
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(function(element) {
+    const key = element.getAttribute('data-i18n');
+    const translation = getNestedTranslation(translations[lang], key);
+    if (translation) {
+      element.textContent = translation;
+    }
+  });
+
+  // Update placeholders
+  updatePlaceholders(lang);
+
+  // Now update dev updates after setting currentLang explicitly
+  updateDevUpdates();
+}
   
   // Helper function to get nested translation
   function getNestedTranslation(obj, path) {
