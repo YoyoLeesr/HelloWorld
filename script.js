@@ -1,9 +1,9 @@
 // =======================
 // TRANSLATIONS OBJECT
 // =======================
-// Use your existing translations content here
+// (Use your existing translations object from before here)
 const translations = {
-    /* your translations object from before… */
+    // ... your big translations.en and translations.zh objects ...
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -54,14 +54,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Language switcher
+    // Language switcher buttons
     langButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
             const lang = this.getAttribute('data-lang');
             currentLang = lang;
             localStorage.setItem('language', lang);
+
+            // Update button styles
             langButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
+
+            // Translate entire page
             changeLanguage(currentLang);
         });
     });
@@ -74,13 +78,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function changeLanguage(lang) {
+        // Update body lang attribute for CSS font switching
         document.body.setAttribute('lang', lang);
+
+        // Translate all data-i18n elements
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             const key = el.getAttribute('data-i18n');
             const translation = getNestedTranslation(translations[lang], key);
             if (translation) el.textContent = translation;
         });
+
+        // Update placeholders
         updatePlaceholders(lang);
+
+        // Update development updates section
         updateDevUpdates();
     }
 
@@ -157,17 +168,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ===========================
-    // ✅ Patreon Tier Buttons: New Tab + Popup message immediately
+    // Patreon Tier Buttons
     // ===========================
     const tierBtns = document.querySelectorAll('.tier-btn');
     tierBtns.forEach(function (btn) {
         btn.addEventListener('click', function (e) {
-            e.preventDefault(); // control the click completely
-
-            // Open Patreon in a new tab immediately
+            e.preventDefault();
             window.open(this.href, '_blank', 'noopener');
-
-            // Tier name and message
             const tierName = this.closest('.tier-card').querySelector('.tier-name').textContent;
             const messages = {
                 en: `Redirecting to Patreon for ${tierName} tier...`,
@@ -177,20 +184,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-// One-time donation button: open gift link in new tab + show popup
-const oneTimeBtn = document.querySelector('.btn-patreon');
-if (oneTimeBtn) {
-    oneTimeBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // stop normal navigation
-        const giftLink = 'https://www.patreon.com/YoyoLee520/gift';
-        window.open(giftLink, '_blank', 'noopener'); // opens immediately
-        showPopup(currentLang === 'zh'
-            ? '正在跳转到 Patreon 礼物页面...'
-            : 'Opening Patreon Gift Page...');
-    });
-}
+    // One-time donation button
+    const oneTimeBtn = document.querySelector('.btn-patreon');
+    if (oneTimeBtn) {
+        oneTimeBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.open(this.href, '_blank', 'noopener');
+            const messages = {
+                en: 'Redirecting to Patreon Gift Page...',
+                zh: '正在跳转到 Patreon 礼物页面...'
+            };
+            showPopup(messages[currentLang]);
+        });
+    }
 
-    // Popup function (non-blocking)
+    // Popup function for messages
     function showPopup(message) {
         const popup = document.createElement('div');
         popup.textContent = message;
@@ -213,7 +221,7 @@ if (oneTimeBtn) {
         }, 3000);
     }
 
-    // Platform click messages for available platforms
+    // Platform buttons (non-disabled)
     const platformBtns = document.querySelectorAll('.platform-btn:not(.disabled)');
     platformBtns.forEach(function (btn) {
         btn.addEventListener('click', function (e) {
