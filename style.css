@@ -558,10 +558,9 @@ body[lang="zh"] .feature-card h3 {
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
 }
 
 .video-container:hover {
@@ -569,11 +568,13 @@ body[lang="zh"] .feature-card h3 {
   box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
 }
 
-.video-placeholder,
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
 #videoFrame {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border-radius: 12px;
