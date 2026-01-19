@@ -537,17 +537,17 @@ function updateDevUpdates() {
   
   // Tier button clicks
   const tierBtns = document.querySelectorAll('.tier-btn');
-  tierBtns.forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const tierName = this.closest('.tier-card').querySelector('.tier-name').textContent;
-      const messages = {
-        en: `Redirecting to Patreon for ${tierName} tier...`,
-        zh: `正在跳转到 Patreon ${tierName} 等级...`
-      };
-      alert(messages[currentLang]);
+tierBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const tierName = this.closest('.tier-card').querySelector('.tier-name').textContent;
+        const messages = {
+            en: `Redirecting to Patreon for ${tierName} tier...`,
+            zh: `正在跳转到 Patreon ${tierName} 等级...`
+        };
+        alert(messages[currentLang]);
+        // the link will open after the alert closes because we removed e.preventDefault()
     });
-  });
+});
   
   // One-time donation button
   const oneTimeBtn = document.querySelector('.btn-patreon');
