@@ -364,24 +364,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Language switcher
-  langButtons.forEach(function(btn) {
+langButtons.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      const lang = this.getAttribute('data-lang');
-      
-      // Update active button
-      langButtons.forEach(function(b) {
-        b.classList.remove('active');
-      });
-      this.classList.add('active');
-      
-      // Change language
-      changeLanguage(lang);
-      
-      // Save preference
-      localStorage.setItem('language', lang);
-      currentLang = lang;
+        const lang = this.getAttribute('data-lang');
+        // Update active button
+        langButtons.forEach(function(b) {
+            b.classList.remove('active');
+        });
+        this.classList.add('active');
+        // Change language
+        changeLanguage(lang);
+        // Save preference
+        localStorage.setItem('language', lang);
+        currentLang = lang;
     });
-  });
+});
   
   // Initialize language
   function initializeLanguage() {
