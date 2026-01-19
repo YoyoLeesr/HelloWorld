@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function () {
         videoPlaceholder.addEventListener('click', function () {
             const videoFrame = document.getElementById('videoFrame');
             if (videoFrame) {
-                videoFrame.src = 'https://youtu.be/tUjlefu-PrE?si=Ldqgy8tNGfbUDzvF?autoplay=1';
+                videoFrame.src = 'https://www.youtube.com/embed/tUjlefu-PrE?autoplay=1&rel=0';
                 videoFrame.style.display = 'block';
                 videoPlaceholder.style.display = 'none';
             }
