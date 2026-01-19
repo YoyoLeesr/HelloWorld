@@ -365,12 +365,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Video placeholder click
+    // Video placeholder click - Embed YouTube
     if (videoPlaceholder) {
         videoPlaceholder.addEventListener('click', function () {
-            alert(currentLang === 'zh'
-                ? '视频播放器将在此处打开！请替换为您的游戏预告片。'
-                : 'Video player would open here! Replace with your game trailer.');
+            const videoFrame = document.getElementById('videoFrame');
+            if (videoFrame) {
+                videoFrame.src = 'https://www.youtube.com/embed/tUjlefu-PrE?autoplay=1';
+                videoFrame.style.display = 'block';
+                videoPlaceholder.style.display = 'none';
+            }
         });
     }
 
